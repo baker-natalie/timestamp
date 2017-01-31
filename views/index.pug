@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1= time
+  h1.blue Timestamp Microservice
+  p a FreeCodeCamp project by Natalie Baker
+  h3.blue Example Usage
+  code localhost:3000/22 April 1986
+  br
+  code localhost:3000/514512000
+  p.blue Output: JSON:
+  p { "unix" : "514512000", "natural" : "22 April 1986" }
