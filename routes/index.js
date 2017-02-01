@@ -23,14 +23,12 @@ router.get('/:input', function(request, response) {
 
 	if(!isNaN(request.params.input)) {
 		var naturalDate = getNaturalDate(request.params.input);
-		var data = { unix: request.params.input, natural: naturalDate };
-		response.json(data);
+		response.json({ unix: request.params.input, natural: naturalDate });
 	} else {
 		var natInput = new Date(request.params.input);
 		if(!isNaN(natInput)) {
 			var unix = natInput / 1000;
-			var data = { unix: unix, natural: request.params.input }
-			response.json(data);
+			response.json({ unix: unix, natural: request.params.input });
 		} else {
 			response.json({ unix: null, natural: null });
 		} 
